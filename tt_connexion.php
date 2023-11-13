@@ -17,17 +17,18 @@
   
   if ($stmt = $mysqli->prepare("SELECT * FROM users WHERE email=? limit 1")) 
   {
-   
+    
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();   
 
     if($result->num_rows > 0) 
     {     
+      
         $row = $result->fetch_assoc(); 
             if (password_verify($password,$row["password"])) 
             {
-              echo "connexion reussi"
+              echo "connexion reussi";
                   // Redirection vers la page admin.php ou autres pages en fonction du role (tuteur,admin, etc.);
                   $_SESSION['PROFILE']=$row;
                 //$_SESSION['message'] = "Authentification réussi pour un role inconnu.";
@@ -35,25 +36,25 @@
                   
                   $_SESSION['message'] = "Authentification réussi pour un admin.";
                  
-                  // header('Location: creeradmin.php');
+                   header('Location: creeradmin.php');
                 }
                 if($row["role"]==1)
                 {
                 $_SESSION['message'] = "Authentification réussi pour un membre.";
-                // header('Location: listjeux.php');
+                 header('Location: listjeux.php');
               }          
             
               }else { 
                 // Redirection vers la page d'authetification connexion.php
               $_SESSION['message'] = "Erreur de connexion";
-                // header('Location: conne.php');
+                 header('Location: conne.php');
                 
               }    
         
     }else{
         
       $_SESSION['message'] = "Erreur de connexion";
-        //  header('Location: conne.php');
+         header('Location: conne.php');
         }
     }
 
