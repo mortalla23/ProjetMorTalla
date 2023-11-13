@@ -1,12 +1,12 @@
 <?php
   session_start(); // Pour les massages
 
-$nom=$_POST['nomjeux'];
-$photo=$_FILES['userfile']['name'];//recupérer le nom de fichier
-$fichierTemp=$_FILES['userfile']['tmp_name'];//recupérer le nom du fichier temporaire téléchargé sur le serveur.
-move_uploaded_file($fichierTemp,'./images/'.$photo);//transférer le fichier dans le dossier image du projet
+$nom=$_POST['NOMJ'];
+$photo=$_FILES['FILE']['name'];//recupérer le nom de fichier
+$fichierTemp=$_FILES['FILE']['tmp_name'];//recupérer le nom du fichier temporaire téléchargé sur le serveur.
+move_uploaded_file($fichierTemp,'./img/'.$photo);//transférer le fichier dans le dossier image du projet
 require_once("connpdo.php");
-$req="INSERT INTO jeux(NOM,FILE) VALUES (?,?)";
+$req="INSERT INTO jeux(NOMJ,FILE) VALUES (?,?)";
 $ps=$pdo->prepare($req);
 $params=array($nom,$photo);
 
