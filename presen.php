@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +42,9 @@
             <div class ="row ">
                     <h1 class="text-center redressed">Bienvenue</h1>
                      <h2 class="text-center redressed " >
-                        GameSphère est votre portail en ligne dédié aux amateurs de jeux de plateau, offrant une expérience de jeu immersive et divertissante. Plongez dans l'univers des jeux de plateau classiques tels que Monopoly, jeu de carte, ludo, tous réunis sur une plateforme conviviale.</br><u>Présentation</u>
+                        GameSphère est votre portail en ligne dédié aux amateurs de jeux de plateau, offrant une expérience de jeu immersive et divertissante. 
+                        Plongez dans l'univers des jeux de plateau classiques tels que Monopoly, jeu de carte, ludo, tous réunis sur une plateforme conviviale.</br>
+                        <u>Présentation</u>
                      </h2>  
                      
                         <h4 class="text-center redressed">1.<u>Une Collection Étendue de Jeux de Plateau </u>  :</h4>
@@ -77,17 +78,15 @@
             </div>
             <div class="col-6">
                 <ul class="nav text-center">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">FAQ</a>
+                       
+                <li class="nav-item">
+                        <a href="presen.php" class="nav-link text-white">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">About</a>
+                        <a href="index.php" class="nav-link text-white">Jeux</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Jeux</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Contact</a>
+                        <a href="presen.php" class="nav-link text-white">Contact</a>
                     </li>
                 </ul>
             </div>

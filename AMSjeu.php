@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -13,7 +12,7 @@
 <body>
     <nav class="cc-navbar navbar navbar-expand-lg position-fixed navbar-dark w-100">
         <div class="container">
-          <a class="navbar-brand test-uppercase fw-bolder mx-4 py-3" href="#">GameSphère</a>
+          <a class="nav-link" class="navbar-brand test-uppercase fw-bolder mx-4 py-3" href="presen.php">GameSphère</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -30,7 +29,7 @@
             </ul>
             <ul class="navbar-nav mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" href="logout.php">Déconnexion</a>
+                  <a class="nav-link" href="index.php">Déconnexion</a>
                 </li>
         
               </ul>
@@ -50,7 +49,7 @@
             
             <div class ="row">
                
-                    <form  method="POST" action="tt_jeux.php">
+                    <form  method="POST" action="tt_inscrip.php">
                         
                         
                         <div class="container">

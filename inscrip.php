@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-  
     <nav class="cc-navbar navbar navbar-expand-lg position-fixed navbar-dark w-100">
         <div class="container">
           <a class="navbar-brand test-uppercase fw-bolder mx-4 py-3" href="#">GameSphère</a>
@@ -102,17 +100,15 @@
             </div>
             <div class="col-6">
                 <ul class="nav text-center">
+                    
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">FAQ</a>
+                        <a href="presen.php" class="nav-link text-white">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">About</a>
+                        <a href="index.php" class="nav-link text-white">Jeux</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Jeux</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Contact</a>
+                        <a href="presen.php" class="nav-link text-white">Contact</a>
                     </li>
                 </ul>
             </div>

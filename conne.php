@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +12,6 @@
 </head>
 <body>
     
-
     <nav class="cc-navbar navbar navbar-expand-lg position-fixed navbar-dark w-100">
         <div class="container">
           <a class="navbar-brand test-uppercase fw-bolder mx-4 py-3" href="#">GameSphère</a>
@@ -28,14 +25,12 @@
               </li>
               
               <li class="nav-item pe-2">
-                <a class="nav-link" href ="presen.php">Presentation </a>
+                <a class="nav-link" href ="presen.php">Presentation</a>
               </li>
               <li class="nav-item pe-2">
                 <a class="nav-link" href ="inscrip.php">Devenir membre</a>
               </li>
-              <li class="nav-item pe-2">
-                <a class="btn btn-order rounded-0" href ="conne.php">Connection</a>
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -58,7 +53,7 @@
                 
                 <div class ="row">
                    
-                        <form  method="POST" action="tt_connexion.php">
+                        <form  method="POST" action="tt_inscription.php">
                             
                             
                             
@@ -77,12 +72,12 @@
                                     <input type="password" class="form-control " id="password" name="password" placeholder="Votre mot de passe..." required>
                                 </div>
                                 
-                              </div>
+                                </div>
 
                                 <section class="centre">
                                 <div class="row my-3">
                                 <div class="d-grid gap-2 d-ms-block">
-                                    <input class="btn btn-outline-primary md-6" type="submit">Connexion</button></div>   
+                                    <button class="btn btn-outline-primary md-6" type="submit">Connexion</button></div>   
                                    
                                 </div>
                             

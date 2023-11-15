@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 13 nov. 2023 à 09:50
+-- Généré le : lun. 13 nov. 2023 à 12:27
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `jeux` (
   `id` int(11) NOT NULL,
-  `NOM` varchar(255) NOT NULL,
+  `NOMJ` varchar(255) NOT NULL,
   `FILE` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -44,7 +44,7 @@ CREATE TABLE `users` (
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -53,10 +53,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `password`, `role`) VALUES
-(1, 'talla', 'mor', 'mor@gmail.com', 'Mt23', 1),
-(2, 'tal', 'mo', 'moor@gmail.com', '$2y$12$BQP9L9a7I4dHqdpg2bISn.tGNWtL2RXVLfmN2.Cpz2q', 1),
-(3, 'degla', 'loic', 'loic@gmail.com', '$2y$12$kmz.xIpIY0FtbArVCb3PH.2ybVsxb18cJFOrjCvUiHR', 1),
-(4, 'essai', 'essai', 'essai@gmail.com', '$2y$12$V4kyriadjrDiAIAKx2YiGunnEVbRfIN4.oKx/Cht1uc', 1);
+(9, 'talla', 'mor', 'mor@gmail.com', '$2y$12$eLPwXqcbfUiRX/xC1bayG.5B739GFS9Z8W/9PaEWzQjnG9/Xt6OE2', 2),
+(10, 'degla', 'loic', 'loic@gmail.com', '$2y$12$UpncW5.EMdC3FsT9aLo6wOCV2Ho9XW2Cz7eqkpzbWCpBarzHge8vW', 1),
+(11, '', '', '', '$2y$12$zz8HBpLza1NU6CeJzs6M5OFjxNkY.n/jsoYFBaxHFtCrar.hpwbQ6', 1);
 
 --
 -- Index pour les tables déchargées
@@ -88,7 +87,7 @@ ALTER TABLE `jeux`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
