@@ -37,6 +37,7 @@
         </div>
       </nav>
 
+      
       <section class="banner d-flex justify-content-center align-items-center pt-5"> 
         <h1 class=" text-center redressed banner-desc">
             Bienvenue Administateur!
