@@ -43,7 +43,7 @@
                 if($row["role"]==1)
                 {
                 $_SESSION['message'] = "Authentification réussi pour un membre.";
-                 header('Location: listjeux.php');
+                 header('Location: listejeu.php');
               }          
             
               }else { 

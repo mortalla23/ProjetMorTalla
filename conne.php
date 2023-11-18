@@ -11,6 +11,8 @@
     <title>Connexion </title>
 </head>
 <body>
+
+
     
     <nav class="cc-navbar navbar navbar-expand-lg position-fixed navbar-dark w-100">
         <div class="container">
@@ -53,7 +55,7 @@
                 
                 <div class ="row">
                    
-                        <form  method="POST" action="tt_inscription.php">
+                        <form  method="POST" action="tt_connexion.php">
                             
                             
                             

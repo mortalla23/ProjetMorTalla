@@ -23,8 +23,14 @@
               </li>
               
               <li class="nav-item pe-2">
-                <a class="nav-link" href ="AMSjeu.php">Ajout-Sup-Mod Jeu</a>
+                <a class="nav-link" href ="Ajoutjeu.php">Ajout Jeu</a>
               </li>
+              
+              <li class="nav-item pe-2">
+                <a class="nav-link" href ="suppjeu.php">Supprimer Jeu</a>
+              </li>
+              
+              
               
             </ul>
             <ul class="navbar-nav mb-lg-0">

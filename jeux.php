@@ -20,9 +20,11 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item pe-2">
-                <a class="nav-link active" aria-current="page" href="listjeux.php">ListeJeux</a>
+                <a class="nav-link active" aria-current="page" href="jeux.php">Jeux</a>
               </li>
-              
+              <li class="nav-item pe-2">
+                <a class="nav-link active" aria-current="page" href="listejeu.php">Liste des jeux à jour </a>
+              </li>
               <li class="nav-item pe-2">
                 <a class="nav-link" href ="souhaitjeu.php">Choisir un jeu à jouer</a>
               </li>

@@ -37,7 +37,7 @@
   }
 
     // Redirection vers la page d'accueil par exemple :
-    header('Location: listjeux.php');
+    header('Location: listejeu.php');
 
 
 ?>

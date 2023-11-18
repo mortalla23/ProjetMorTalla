@@ -1,5 +1,30 @@
+<?php
+
+require_once("connpdo.php");
+
+function deleteJeu($id, $pdo) {
+    $deleteQuery = "DELETE FROM jeux WHERE ID = ?";
+    $deleteStatement = $pdo->prepare($deleteQuery);
+    return $deleteStatement->execute([$id]);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete']) && !empty($_POST['delete'])) {
+    $deleteId = $_POST['delete'];
+    
+    if (deleteJeu($deleteId, $pdo)) {
+        echo "Suppression réussie.";
+    } else {
+        echo "Erreur lors de la suppression.";
+    }
+}
+
+$query = "SELECT ID, NOMJ, FILE FROM jeux";
+$statement = $pdo->query($query);
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +32,29 @@
     
     <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
-    <title>Document Admin</title>
+    <title>Supp Jeux</title>
+    <style>
+    table {
+        width: 80%; /* Ajustez la largeur du tableau selon vos besoins */
+        border-collapse: collapse;
+        margin: 20px; /* Ajoutez une marge autour du tableau */
+    }
+
+    th, td {
+        padding: 15px; /* Ajustez l'espacement à l'intérieur des cellules */
+        text-align: center;
+        border: 1px solid #ddd; /* Ajoutez des bordures aux cellules */
+    }
+
+    th {
+        background-color: white;
+    }
+</style>
 </head>
 <body>
-    <nav class="cc-navbar navbar navbar-expand-lg position-fixed navbar-dark w-100">
+<nav class="cc-navbar navbar navbar-expand-lg position-fixed navbar-dark w-100">
         <div class="container">
-          <a class="nav-link" class="navbar-brand test-uppercase fw-bolder mx-4 py-3" href="presen.php">GameSphère</a>
+          <a class="nav-link" class="navbar-brand test-uppercase fw-bolder mx-4 py-3" href="#">GameSphère</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -23,8 +65,14 @@
               </li>
               
               <li class="nav-item pe-2">
-                <a class="nav-link" href ="AMSjeu.php">Ajout-Sup-Mod Jeu</a>
+                <a class="nav-link" href ="Ajoutjeu.php">Ajout Jeu</a>
               </li>
+              
+              <li class="nav-item pe-2">
+                <a class="nav-link" href ="suppjeu.php">Supprimer Jeu</a>
+              </li>
+              
+              
               
             </ul>
             <ul class="navbar-nav mb-lg-0">
@@ -36,8 +84,6 @@
           </div>
         </div>
       </nav>
-
-      
       <section class="banner d-flex justify-content-center align-items-center pt-5"> 
         <h1 class=" text-center redressed banner-desc">
             Bienvenue Administateur!
@@ -45,65 +91,45 @@
         <div class="container my-5 py-5">
             <h1 class="text-capitalize text-center redressed banner-desc">
                  <u>GameSphère</u> <br />
-                 Ajout-Mod-Sup un jeu
+                 Supprimer un jeu
             </h1>    
             
             <div class ="row">
-               
-                    <form  method="POST" action="tt_inscrip.php">
+   
+
+            <table border="1">
+                <tr style="background-color: white;">
+                    <th>ID </th>
+                    <th>Nom du Jeu </th>
+                    <th>Action </th>
+                </tr>
+                <?php while ($row = $statement->fetch(PDO::FETCH_ASSOC)) : ?>
+                    <tr>
+                        <td style="background-color: white;"><?= $row['ID'] ?></td>
+                        <td style="background-color: white;"><?= $row['NOMJ'] ?></td>
+                        <td>
+                    <form method="POST" action="">
+                        <input type="hidden" name="delete" value="<?= $row['ID'] ?>">
                         
-                        
-                        <div class="container">
+                        <section class="centre">
                         <div class="row my-3">
-                            
-                            <div class="col-md-10">
-                                <label for="nomjeux" class="form-label">Nom de jeux</label>
-                                <input type="text" class="form-control " id="nomjeux" name="nomjeux" placeholder="Nom du jeux..." required>
-                            </div>
-                            <div class="col-md-6">
-                                <label  class="form-label">Ajout d'une photo </label>
-                                <input type="file" name="userfile" class="form-control" />
-                               
-                              </div>
-                        </div>
-                       
-                            <section class="centre">
-                                
-                            <div class="row my-3">
-                                <div class="col-md-2">
-                            <div class="d-grid gap-2 d-ms-block">
-                                <button class="btn btn-outline-primary md-6" type="submit">Ajouter</button></div>   
-                            </div>
-                        </div>
-                            </section>
-                            <section class="centre">
-                                
-                                <div class="row my-3">
-                                    <div class="col-md-2">
+                            <div class="col-md-2">
                                 <div class="d-grid gap-2 d-ms-block">
-                                    <button class="btn btn-outline-primary md-6" type="submit">Modifier</button></div>   
+                                    <button class="btn btn-outline-danger md-6" type="submit">Supprimer</button>
                                 </div>
                             </div>
-                                </section>
-                                <section class="centre">
-                                
-                                    <div class="row my-3">
-                                        <div class="col-md-2">
-                                    <div class="d-grid gap-2 d-ms-block">
-                                        <button class="btn btn-outline-primary md-6" type="submit">Supprimer</button></div>   
-                                    </div>
-                                </div>
-                                    </section>
-                            
                         </div>
+                        </section
+                    </form>
+                </td>
+            </tr>
+        <?php endwhile; ?>
+    </table>
                 </div>
-                
-            </form>
-        </div>
-          
-        
-  </section>
-  <section class="footer py-5 d-flex justify-content-center">
+                </div>
+
+                </section>
+    <section class="footer py-5 d-flex justify-content-center">
     <div class="container">
         <div class="row">
             <div class="col-6 d-flex align-items-center">
@@ -132,5 +158,6 @@
     </div>
   </section>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
